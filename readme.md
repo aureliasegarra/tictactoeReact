@@ -6,7 +6,7 @@
 ![Illustrations](image)
 
 ## Language/tools
-- HTML5 / CSS3 / CSS
+- HTML5 / CSS3
 - Javascript
 - React
 
