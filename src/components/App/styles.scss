@@ -1,7 +1,10 @@
 .app {
   width: 500px;
   margin: 4em auto;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
