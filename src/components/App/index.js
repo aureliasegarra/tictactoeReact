@@ -1,5 +1,5 @@
 // == Import npm
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 // == Import
 import './styles.scss';
@@ -21,8 +21,7 @@ const App = () => {
       <Cells cells={cells} onClick={handleOnClick} />
     </div>
   );
-}
-
+};
 
 // == Export
 export default App;
