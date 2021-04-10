@@ -1,18 +1,28 @@
 // == Import npm
-import React from 'react';
-import Board from 'src/components/Board';
+import React, { useState, useEffect } from 'react';
 
 // == Import
 import './styles.scss';
 
+import Cells from 'src/components/Cells';
+
 // == Composant
-const App = () => (
-  <div className="app">
-    <h1 className="title">Tic Tac Toe</h1>
-    <h2 className="subtitle">The Game 🤖</h2>
-    <Board />
-  </div>
-);
+const App = () => {
+  const [cells, setCells] = useState(['', '', '', '', '', '', '', '', '']);
+
+  const handleOnClick = () => {
+
+  };
+
+  return (
+    <div className="app">
+      <h1 className="title">Tic Tac Toe</h1>
+      <h2 className="subtitle">The Game 🤖</h2>
+      <Cells cells={cells} onClick={handleOnClick} />
+    </div>
+  );
+}
+
 
 // == Export
 export default App;
