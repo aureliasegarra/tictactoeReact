@@ -8,8 +8,14 @@ import Cells from 'src/components/Cells';
 
 // == Composant
 const App = () => {
+  const [start, setStart] = useState(false);
   const [cells, setCells] = useState(['', '', '', '', '', '', '', '', '']);
   const [xTurn, setXTurn] = useState(true);
+
+  const startTheGame = () => {
+    setCells(Array(9).fill(null));
+    setStart(true);
+  };
 
   const handleOnClick = (i) => {
     const newCells = [...cells];
