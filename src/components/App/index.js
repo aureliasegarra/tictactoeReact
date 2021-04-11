@@ -1,5 +1,5 @@
 // == Import npm
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // == Import
 import './styles.scss';
@@ -14,6 +14,8 @@ const App = () => {
   const [start, setStart] = useState(false);
   const [cells, setCells] = useState(['', '', '', '', '', '', '', '', '']);
   const [xTurn, setXTurn] = useState(true);
+  const [xScore, setXScore] = useState(0);
+  const [oScore, setOScore] = useState(0);
   const winner = checkWinner(cells);
 
   const startTheGame = () => {
@@ -24,12 +26,30 @@ const App = () => {
 
   const handleOnClick = (i) => {
     const newCells = [...cells];
-    // If the box is checked with a sign so we stop and we go to the other player
     if (newCells[i]) return;
     newCells[i] = xTurn ? 'X' : 'O';
     setCells(newCells);
     setXTurn(!xTurn);
   };
+
+  const winPlayer = () => {
+    if (winner) {
+      if (winner === 'X') {
+        const newXScore = xScore + 1;
+        setXScore(newXScore);
+        setStart(false);
+      }
+      else if (winner === 'O') {
+        const newOScore = oScore + 1;
+        setOScore(newOScore);
+        setStart(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    winPlayer();
+  }, [cells]);
 
   return (
     <div className="app">

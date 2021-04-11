@@ -8,13 +8,14 @@ export function checkWinner(cells) {
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8],
-    [2, 4, 6]
+    [2, 4, 6],
   ];
 
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < winningCombinations.length; i++) {
     const [a, b, c] = winningCombinations[i];
     if (cells[a] && cells[a] === cells[b] && cells[a] === cells[c]) {
+      console.log('winner');
       return cells[a];
     }
   }
