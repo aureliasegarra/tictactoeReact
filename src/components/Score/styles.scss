@@ -1,0 +1,18 @@
+.scores {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.score:first-child {
+  padding-right: 1.5em;
+}
+
+.score_player {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.points {
+  text-align: center;
+}
