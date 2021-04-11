@@ -56,9 +56,11 @@ const App = () => {
     <div className="app">
       <h1 className="title">Tic Tac Toe</h1>
       <h2 className="subtitle">The Game 🤖</h2>
-      <Button onClick={startTheGame} />
+      {!start && (
+        <Button onClick={startTheGame} />
+      )}
+      <Score xScore={xScore} oScore={oScore} />
       <Cells cells={cells} onClick={handleOnClick} />
-      <Score />
     </div>
   );
 };

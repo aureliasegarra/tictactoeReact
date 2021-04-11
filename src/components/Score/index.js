@@ -9,12 +9,12 @@ import './styles.scss';
 const Score = ({ xScore = 0, oScore = 0 }) => (
   <div className="scores">
     <div className="score">
-      <p>X Score</p>
-      <p>Point(s)</p>
+      <p className="score_player">X Score</p>
+      <p className="points">{xScore}</p>
     </div>
     <div className="score">
-      <p>O Score</p>
-      <p>Point(s)</p>
+      <p className="score_player">O Score</p>
+      <p className="points">{oScore}</p>
     </div>
   </div>
 );
