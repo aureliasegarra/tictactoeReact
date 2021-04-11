@@ -6,6 +6,7 @@ import './styles.scss';
 
 import Cells from 'src/components/Cells';
 import Button from 'src/components/Button';
+import Score from 'src/components/Score';
 
 import { checkWinner } from '../../selectors/winnerPlayer';
 
@@ -57,6 +58,7 @@ const App = () => {
       <h2 className="subtitle">The Game 🤖</h2>
       <Button onClick={startTheGame} />
       <Cells cells={cells} onClick={handleOnClick} />
+      <Score />
     </div>
   );
 };
