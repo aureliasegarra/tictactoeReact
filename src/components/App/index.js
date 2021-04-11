@@ -14,6 +14,7 @@ const App = () => {
   const [xTurn, setXTurn] = useState(true);
 
   const startTheGame = () => {
+    console.log('je commence une partie');
     setCells(Array(9).fill(null));
     setStart(true);
   };
@@ -31,7 +32,7 @@ const App = () => {
     <div className="app">
       <h1 className="title">Tic Tac Toe</h1>
       <h2 className="subtitle">The Game 🤖</h2>
-      <Button />
+      <Button onClick={startTheGame} />
       <Cells cells={cells} onClick={handleOnClick} />
     </div>
   );
