@@ -12,3 +12,18 @@
   font-size: 5rem;
   flex-direction: column;
 }
+
+#restartButton {
+  font-size: 3rem;
+  color: #24BDAB;
+  border-radius: 20px;
+  padding: .25em .5em;
+  cursor: pointer;
+  margin-top: 3em;
+}
+
+#restartButton:hover {
+  background-color: #24BDAB;
+  color: white;
+  border-radius: 20px;
+}

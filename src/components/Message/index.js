@@ -8,6 +8,7 @@ import './styles.scss';
 const Message = () => (
   <div className="winning-message">
     <p>You won 🥳</p>
+    <button type="button" id="restartButton">Start again 💪</button>
   </div>
 );
 
