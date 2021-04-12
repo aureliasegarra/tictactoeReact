@@ -6,7 +6,9 @@ import './styles.scss';
 
 // == Composant
 const Message = () => (
-  <p>You won 🥳</p>
+  <div className="winning-message">
+    <p>You won 🥳</p>
+  </div>
 );
 
 // == Export
