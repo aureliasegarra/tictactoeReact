@@ -7,6 +7,7 @@ import './styles.scss';
 import Cells from 'src/components/Cells';
 import Button from 'src/components/Button';
 import Score from 'src/components/Score';
+import Message from 'src/components/Message';
 
 import { checkWinner } from '../../selectors/winnerPlayer';
 
@@ -20,7 +21,6 @@ const App = () => {
   const winner = checkWinner(cells);
 
   const startTheGame = () => {
-    console.log('je commence une partie');
     setCells(Array(9).fill(null));
     setStart(true);
   };
@@ -61,6 +61,9 @@ const App = () => {
       )}
       <Score xScore={xScore} oScore={oScore} />
       <Cells cells={cells} onClick={handleOnClick} />
+      {winner && (
+        <Message />
+      )}
     </div>
   );
 };
