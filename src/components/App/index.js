@@ -62,7 +62,7 @@ const App = () => {
       <Score xScore={xScore} oScore={oScore} />
       <Cells cells={cells} onClick={handleOnClick} />
       {winner && (
-        <Message />
+        <Message onClick={startTheGame} />
       )}
     </div>
   );
