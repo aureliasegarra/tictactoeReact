@@ -8,6 +8,7 @@ import Cells from 'src/components/Cells';
 import Button from 'src/components/Button';
 import Score from 'src/components/Score';
 import Message from 'src/components/Message';
+import Reset from 'src/components/Reset';
 
 import { checkWinner } from '../../selectors/winnerPlayer';
 
@@ -23,6 +24,12 @@ const App = () => {
   const startTheGame = () => {
     setCells(Array(9).fill(null));
     setStart(true);
+  };
+
+  const resetGame = () => {
+    setStart(true);
+    setXScore(0);
+    setOScore(0);
   };
 
   const handleOnClick = (i) => {
@@ -57,10 +64,15 @@ const App = () => {
       <h1 className="title">Tic Tac Toe</h1>
       <h2 className="subtitle">The Game 🤖</h2>
       {!start && (
-        <Button onClick={startTheGame} />
+        <div className="btn_container">
+          <Button onClick={startTheGame} />
+        </div>
       )}
-      <Score xScore={xScore} oScore={oScore} />
+      {start && (
+        <Score xScore={xScore} oScore={oScore} />
+      )}
       <Cells cells={cells} onClick={handleOnClick} />
+      <Reset onClick={resetGame} />
       {winner && (
         <Message onClick={startTheGame} />
       )}
